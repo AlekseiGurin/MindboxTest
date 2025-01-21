@@ -1,0 +1,12 @@
+.App {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  .todo-container {
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    background: gray;
+  }
+}
+
