@@ -1,12 +1,45 @@
 .App {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-  .todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .label {
+      text-align: center;
+      color: indianred;
+      font-size: 100px;
+      font-weight: 100;
+    }
+  .todo-desk {
     width: 500px;
     height: fit-content;
     padding: 20px;
     background: gray;
+    .todos {
+      width: 100%;
+      background-color: white;
+      .todo-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        padding: 20px 10px;
+        .circle {
+          width: 30px;
+          height: 30px;
+          border: 1px solid gray;
+          border-radius: 50%;
+          color: green;
+          text-align: center;
+          font-size: 23px;
+        }
+        .tado-text {
+          &.done {
+            text-decoration: line-through;
+            color: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+    }
   }
 }
 

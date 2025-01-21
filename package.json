@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.5.2",
+    "antd": "^5.23.2",
     "cra-template-typescript": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "uuid": "^11.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,6 +36,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
     "sass": "^1.83.4"
   }
 }
