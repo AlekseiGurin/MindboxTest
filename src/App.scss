@@ -1,31 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 $lineGap: 40px;
 $mainBackgroundColor: white;
 $lineHeight: 72px;
+$border: 1px solid gray;
 
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  .label {
+  .content-container {
+    background-color: $mainBackgroundColor;
+  }
+  .ant-skeleton-content {
+    height: $lineHeight * 3;
+  }
+  .todo-desk {
+    opacity: 0.6;
+    width: 500px;
+    height: fit-content;
+    padding: 10px;
+    background: gray;
+    .label {
       text-align: center;
       color: indianred;
       font-size: 100px;
       font-weight: 100;
     }
-  .todo-desk {
-    width: 500px;
-    height: fit-content;
-    padding: 20px;
-    background: gray;
     .input-container {
       display: flex;
       align-items: center;
       gap: $lineGap;
       background-color: $mainBackgroundColor;
+      .ant-form {
+        height: $lineHeight;
+        display: flex;
+        align-items: center;
+        .ant-form-item {
+          margin: 0;
+        }
+      }
       .ant-input {
         border: none;
-        height: lineHeight;
       }
     }
     .todos {
@@ -39,10 +60,11 @@ $lineHeight: 72px;
         justify-content: flex-start;
         gap: $lineGap;
         padding: 20px 10px;
+        border-top: $border;
         .circle {
           width: 30px;
           height: 30px;
-          border: 1px solid gray;
+          border: $border;
           border-radius: 50%;
           color: green;
           text-align: center;
@@ -59,6 +81,22 @@ $lineHeight: 72px;
     .todo-desk-footer {
       display: flex; 
       justify-content: space-between;
+      align-items: center;
+      background-color: $mainBackgroundColor;
+      border-top: $border;
+      padding: 10px;
+      .filter-button-block {
+        display: flex;
+        gap: 10px;
+        .ant-btn {
+          padding: 0 5px;
+        }
+      }
+      .clear-button {
+        .ant-btn {
+          padding: 0;
+        }
+      }
     }
   }
 }

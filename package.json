@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.26.5",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "sass": "^1.83.4"
