@@ -3,14 +3,14 @@ import { TodoType } from './Todo';
 import { CheckOutlined } from '@ant-design/icons';
 import { Empty, Button } from 'antd';
 
-interface TodoListProps {
+export interface TodoListProps {
     todos: TodoType[];
     onCompletedTodo: (todoId: string) => void;
 }
 
 export const TodoList: React.FC<TodoListProps> = ({ todos, onCompletedTodo }) => {
     return (
-        <div className="todos">
+        <div data-testid="todoList" className="todos">
            {todos.length ? todos.map(item => (
                 <div onClick={() => onCompletedTodo(item.id)} id={item.id} key={item.id} className="todo-item">
                     <div className="circle">{item.done && <CheckOutlined />}</div>

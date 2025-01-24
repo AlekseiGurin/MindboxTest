@@ -108,11 +108,11 @@ console.log("displayedTasks", displayedTasks)
                 </div>
                 { todos ? <TodoList todos={todos} onCompletedTodo={onCompletedTodo} /> : <Skeleton />}  
                 <div className="todo-desk-footer">
-                    <TaskCountIndicator displayedTasks={displayedTasks} tasks={todos} />
+                    <TaskCountIndicator displayedTasks={displayedTasks} todos={todos} />
                     <div className="filter-button-block">
                         <Button disabled={!todos} key="All" onClick={() => onButtonTypeTaskKlick("All")} type={displayedTasks === "All" ? "default" : "text"}>All</Button>
                         <Button disabled={!todos} key="Active" onClick={() => onButtonTypeTaskKlick("Active")} type={displayedTasks === "Active" ? "default" : "text"}>Active</Button>
-                        <Button disabled={!todos} key="Complited" onClick={() => onButtonTypeTaskKlick("Complited")} type={displayedTasks === "Complited" ? "default" : "text"}>Complited</Button>
+                        <Button data-testid="complitedBtn" disabled={!todos} key="Complited" onClick={() => onButtonTypeTaskKlick("Complited")} type={displayedTasks === "Complited" ? "default" : "text"}>Complited</Button>
                     </div>
                     <Button disabled={!todos} className="clear-button"onClick={() => onClear()} type="text">Clear complited</Button>
                 </div>
