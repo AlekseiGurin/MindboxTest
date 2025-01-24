@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Button, Input, Form, Skeleton } from "antd"
 ;
 import { TodoList } from './TodoList';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { TaskCountIndicator } from './TaskCountIndecator';
 
 let tasks = [
@@ -37,6 +37,7 @@ export const Todo = () => {
 const [form] = Form.useForm();
 const [defaultTodos, setDefaultTodos] = useState<TodoType[]>();
 const [displayedTasks, setDisplayedTasks] = useState<DisplayedTasksType>("All");
+const [visibleTodolist, setVisibleTodoList] = useState(true);
 
 useEffect(() => {
    setTimeout(() => {
@@ -96,7 +97,7 @@ console.log("displayedTasks", displayedTasks)
             <div className="label">todos</div>
             <div className="content-container">
                 <div className="input-container">
-                    <Button type="text"><DownOutlined /></Button>
+                    <Button data-testid="hiddTodoListBtn" onClick={() => setVisibleTodoList(!visibleTodolist)} type="text">{visibleTodolist ? <DownOutlined /> : <UpOutlined />}</Button>
                     <Form
                         form={form}
                         onFinish={onChangeTodos}
@@ -106,7 +107,7 @@ console.log("displayedTasks", displayedTasks)
                         </Form.Item>
                     </Form>
                 </div>
-                { todos ? <TodoList todos={todos} onCompletedTodo={onCompletedTodo} /> : <Skeleton />}  
+                { todos ? <TodoList todos={todos} onCompletedTodo={onCompletedTodo} visibleTodolist={visibleTodolist} /> : <Skeleton />}  
                 <div className="todo-desk-footer">
                     <TaskCountIndicator displayedTasks={displayedTasks} todos={todos} />
                     <div className="filter-button-block">

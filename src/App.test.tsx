@@ -33,11 +33,15 @@ describe("Todo items render", () => {
 
     test("todo list render", async () => {
         const fnc = jest.fn();
-        render(<TodoList todos={[]} onCompletedTodo={fnc} />);
+        render(<TodoList todos={[]} onCompletedTodo={fnc} visibleTodolist={true} />);
         const todoList = await screen.findByTestId("todoList");
         expect(todoList).toBeInTheDocument;
+        render(<Todo />); 
+        const hiddTodoListBtn = screen.getByTestId("hiddTodoListBtn");
+        fireEvent.click(hiddTodoListBtn);
+        expect(todoList).toBeNull;
     });
-    
+
     test("onComplited render", () => {
         render(<Todo />);
         const btn = screen.getByTestId("complitedBtn");
@@ -45,5 +49,15 @@ describe("Todo items render", () => {
         expect(complitedCounter).toBeNull;
         fireEvent.click(btn);
         expect(complitedCounter).toBeInTheDocument;
+    });
+
+    test("input is desabled", () => {
+        const fnc = jest.fn();
+        render(<TodoList todos={[]} onCompletedTodo={fnc} visibleTodolist={true} />);
+        const todoList = screen.queryByTestId("todoList");
+        expect(todoList).toBeNull;
+        render(<Todo />); 
+        const input = screen.getByPlaceholderText(/What needs to be done/i);
+        expect(input).toBeDisabled();
     });
 });
