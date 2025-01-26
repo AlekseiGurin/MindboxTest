@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AlekseiGurin.github.io/MindboxTest/static/css/main.1ce764c7.css",
+    "main.js": "/AlekseiGurin.github.io/MindboxTest/static/js/main.0d7e991f.js",
+    "index.html": "/AlekseiGurin.github.io/MindboxTest/index.html",
+    "main.1ce764c7.css.map": "/AlekseiGurin.github.io/MindboxTest/static/css/main.1ce764c7.css.map",
+    "main.0d7e991f.js.map": "/AlekseiGurin.github.io/MindboxTest/static/js/main.0d7e991f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ce764c7.css",
+    "static/js/main.0d7e991f.js"
+  ]
+}
