@@ -1,6 +1,7 @@
 {
   "name": "todo",
   "version": "0.1.0",
+  "homepage": "https://github.com/AlekseiGurin.github.io/MindboxTest",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
