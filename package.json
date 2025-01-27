@@ -1,7 +1,7 @@
 {
   "name": "todo",
   "version": "0.1.0",
-  "homepage": "https://github.com/AlekseiGurin.github.io/MindboxTest",
+  "homepage": "https://AlekseiGurin.github.io/MindboxTest",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
@@ -14,8 +14,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
+    "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

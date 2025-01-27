@@ -89,9 +89,6 @@ const onChangeTodos = (e: { newTodo: string }) => {
     form.resetFields();
 };
 
-console.log("todos", todos)
-console.log("defaultTodos", defaultTodos)
-console.log("displayedTasks", displayedTasks)
     return (
         <div className="todo-desk">
             <div className="label">todos</div>
